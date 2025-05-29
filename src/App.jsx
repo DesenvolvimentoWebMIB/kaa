@@ -1,62 +1,37 @@
-import "./index.css";
-
-function Cubo({ width = 200, height = 120 }) {
-  return (
-    <svg width={width} height={height}>
-      <rect width={width} height={height} fill="#e3e7ed" stroke="#a6b0be" strokeWidth="3" rx="16" />
-    </svg>
-  );
-}
-
-const produtos = [
-  "Cartão de Visita",
-  "Banner",
-  "Flyer",
-  "Adesivo",
-  "Panfleto",
-  "Envelope",
-  "Bloco de Notas",
-  "Calendário"
-];
+import './index.css';
+import './App.css';
+import Dropdown from './Dropdown';
 
 function App() {
+  const produtos = [
+    {
+      title: 'Totens',
+      options: ['150x160 cm', '155x170 cm', '160x180 cm', '170x190 cm'],
+    },
+    {
+      title: 'Totem Cubo',
+      options: ['40x160 cm', '45x180 cm'],
+    },
+    {
+      title: 'Cubo',
+      options: ['10x10 cm', '20x20 cm', '30x30 cm', '40x40 cm'],
+    },
+    {
+      title: 'Backdrop',
+      options: ['150x160 cm', '165x170 cm', '180x190 cm', '240x190 cm'],
+    },
+  ];
+
   return (
-    <div className="app">
-      {/* Header */}
-      <header className="header">
-        <img src="/logo.jpg" alt="Logo" className="logo" />
-        <nav className="nav">
-          <a href="#">Produtos</a>
-          <a href="#">Sobre</a>
-          <a href="#">Contato</a>
-        </nav>
-      </header>
-
-      {/* Busca */}
-      <div className="busca">
-        <input type="text" placeholder="O que você procura?" />
-      </div>
-
-      {/* Banner */}
-      <div className="banner">
-        <Cubo width={850} height={240} />
-      </div>
-
-      {/* Produtos */}
-      <div className="grid">
-        {produtos.map((nome, i) => (
-          <div key={i} className="produto">
-            <Cubo width={160} height={120} />
-            <div className="produto-nome">{nome}</div>
-            <div className="produto-desc">Descrição breve do produto.</div>
-          </div>
+    <div className="App">
+      <header className="header">Logo</header>
+      <input className="busca" placeholder="O que você procura?" />
+      <div className="banner"></div>
+      <div className="produtos">
+        {produtos.map((p, i) => (
+          <Dropdown key={i} title={p.title} options={p.options} />
         ))}
       </div>
-
-      {/* Footer */}
-      <footer className="footer">
-        Clone educacional Printi | Feito por Estevan | Contato: contato@seudominio.com
-      </footer>
     </div>
   );
 }
