@@ -1,6 +1,7 @@
 import './index.css';
 import './App.css';
-import Dropdown from './Dropdown';
+import Dropdown from './Dropdown.jsx';
+
 
 function App() {
   const produtos = [
