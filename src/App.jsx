@@ -1,13 +1,14 @@
 import "./index.css";
 import Dropdown from "./Dropdown.jsx";
 
-function Cubo({ width = 200, height = 120 }) {
+function Cubo({ width = "200", height = "120" }) {
   return (
-    <svg width={width} height={height}>
-      <rect width={width} height={height} fill="#e3e7ed" stroke="#a6b0be" strokeWidth="3" rx="16" />
+<svg width={width} height={height} style={{ maxWidth: '100%' }}>
+      <rect width="100%" height={height} fill="#e3e7ed" stroke="#a6b0be" strokeWidth="3" rx="16" />
     </svg>
   );
 }
+
 
 const produtos = [
   {
@@ -68,7 +69,7 @@ function App() {
 
       {/* Footer */}
       <footer className="footer">
-        Clone educacional Printi | Feito por Estevan | Contato: contato@seudominio.com
+        KAA Displays Inteligentes | Soluções em comunicação visual | Contato: daniel@kaa.com
       </footer>
     </div>
   );
